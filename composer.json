@@ -1,0 +1,15 @@
+{
+    "name": "inoplate/velatchet",
+    "autoload": {
+        "psr-4": {
+            "Inoplate\\Velatchet\\": "src/"
+        }
+    },
+    "require" : {
+        "cboden/ratchet": "0.3.*",
+        "react/zmq": "0.2.*|0.3.*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    }
+}

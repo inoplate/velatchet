@@ -1,0 +1,4 @@
+suites:
+  library_suite:
+    namespace: Inoplate\Velatchet\Tests
+    psr4_prefix: Inoplate\Velatchet\Tests
