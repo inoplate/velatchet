@@ -39,8 +39,13 @@ class Pusher implements WampServerInterface
         $this->clients->attach($conn);
         $session = (new SessionManager($this->app))->driver();
         $cookies = $conn->WebSocket->request->getCookies();
-        $laravelCookie = urldecode($cookies[config('session.cookie')]);
-        $idSession = Crypt::decrypt($laravelCookie);
+
+        if(isset($cookies[config('session.cookie')])) {
+            $laravelCookie = urldecode($cookies[config('session.cookie')]);
+            $idSession = Crypt::decrypt($laravelCookie);
+        }else {
+            $idSession = null;
+        }
 
         $session->setId($idSession);
         $conn->session = $session;
